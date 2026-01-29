@@ -1,16 +1,69 @@
-# React + Vite
+## Modern Neon Auth Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, responsive Login and Sign Up interface built with React and Tailwind CSS. Designed with a focus on aesthetics, featuring a Maroon/Black/White theme and interactive neon animations.
 
-Currently, two official plugins are available:
+### ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dual Mode:** Seamless Dark and Light mode toggle.
+- **Visual Effects:** Rotating neon border animation using CSS conic gradients.
+- **Responsive:** Fully optimized for mobile and desktop screens.
+- **Interactive:** Smooth transitions between Login and Sign Up forms.
+- **Icons:** Integrated with lucide-react.
 
-## React Compiler
+### 🛠️ Tech Stack
+- React
+- Tailwind CSS
+- Lucide React (Icons)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🚀 Getting Started
+1. Prerequisites
+Ensure you have a React project set up with Tailwind CSS configured.
 
-## Expanding the ESLint configuration
+2. Installation
+Install the required icon library:
+```
+npm install lucide-react
+# or
+yarn add lucide-react
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Tailwind Configuration
+To ensure the Dark Mode toggle works correctly, you must add ```darkMode: 'class'``` to your Tailwind config.
+
+Open ```tailwind.config.js```:
+```
+export default {
+  darkMode: 'class', // <--- Important: Add this line
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+4. Usage
+
+Copy the component code into your project (e.g., ```src/components/AuthPage.jsx```) and import it into your main App file:
+```
+import AuthPage from './components/AuthPage';
+
+function App() {
+  return (
+    <AuthPage />
+  );
+}
+
+export default App;
+```
+
+### 🎨 Customization
+
+Colors: The primary color is Maroon (```#800000```). You can specifically find and replace this hex code to match your brand identity.
+
+Animation Speed: The rotation speed is controlled in the internal ```<style>``` tag within the component (```animation: border-spin 4s linear infinite;```). Change ```4s``` to make it faster or slower.
+
+*Simple, Fast, and Aesthetic.*
